@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
-  <title>Booking | Halal Street</title>
+  <title>Gallery | Halal Street</title>
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./globalStyles.css">
   <link rel="stylesheet" href="./components.css">
-  <!-- aos library css  -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./gallery.css">
 </head>
 
 <body>
   <!-- Nav Section -->
-  <div class="nav">
+  <div class="nav" data-aos="fade-down">
     <div class="container">
       <div class="nav__wrapper">
         <a href="./index.html" class="logo">
@@ -33,7 +33,7 @@
             </svg>
           </div>
           <div class="nav__bgOverlay"></div>
-          <ol class="nav__list">
+          <ul class="nav__list">
             <div class="nav__close">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -43,77 +43,39 @@
               </svg>
             </div>
             <div class="nav__list__wrapper">
-
               <li><a class="nav__link" href="./index.html">Home</a></li>
               <li><a class="nav__link" href="./menu.html">Menu</a></li>
               <li><a class="nav__link" href="./about.html">About</a></li>
               <li><a class="nav__link" href="./gallery.html">Gallery</a></li>
               <li><a class="nav__link" href="./contact.html">Contact</a></li>
             </div>
-          </ol>
+          </ul>
         </nav>
       </div>
     </div>
   </div>
   <!-- End Nav Section -->
-  <!-- Booking Section -->
-  <section id="form" data-aos="fade-up">
-    <div class="container">
-      <div class="form__wrapper">
-        <form name="booking" method="POST" netlify>
-          <div class="form__group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="First Name" required>
-          </div>
-          <div class="form__group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="Last Name" required>
-          </div>
-          <div class="form__group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="Email" required>
-          </div>
-          <div class="form__group">
-            <label for="tableType">Table Type</label>
-            <select name="Table Type" id="tableType" required>
-              <option selected disabled>Choose</option>
-              <option value="small">Small(2 persons)</option>
-              <option value="medium">Small(4 persons)</option>
-              <option value="large">large(6 persons)</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="guestNumber">Guest Number</label>
-            <input type="number" id="guestNumber" name="Guest Number" min="1" max="10" required>
-          </div>
-          <div class="form__group">
-            <label for="placement">Placement</label>
-            <select name="Placement" id="placement">
-              <option selected disabled>Choose</option>
-              <option value="outdoor">Outdoor</option>
-              <option value="indoor">Indoor</option>
-              <option value="rooftop">rooftop</option>
-            </select>
-          </div>
-          <div class="form__group">
-            <label for="date">Date</label>
-            <input type="date" id="date" name="Date" required>
-          </div>
-          <div class="form__group">
-            <label for="time">time</label>
-            <input type="time" id="time" name="Time" required>
-          </div>
-          <div class="form__group form__group__full">
-            <label for="note">Note</label>
-            <textarea name="Note" id="note" rows="4"></textarea>
-          </div>
-        </form>
-      </div>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="swiper-container" data-aos="fade-right">
+    <div class="swiper-wrapper" data-aos="fade-up">
+      <div class="swiper-slide"><img src="./images/food-1.png" alt="Food Image 1"></div>
+      <div class="swiper-slide"><img src="./images/food-2.png" alt="Food Image 2"></div>
+      <div class="swiper-slide"><img src="./images/food-3.png" alt="Food Image 3"></div>
+      <div class="swiper-slide"><img src="./images/food-4.png" alt="Food Image 4"></div>
+      <div class="swiper-slide"><img src="./images/food-5.png" alt="Food Image 5"></div>
+      <div class="swiper-slide"><img src="./images/food-6.png" alt="Food Image 6"></div>
     </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </section>
-  <!-- End Booking Section -->
+  <!-- End Gallery Section -->
+
   <!-- Footer -->
-  <footer>
+<footer>
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__col1">
@@ -213,13 +175,23 @@
             </li>
           </ol>
         </div>
+        <div class="footer__col5">
+          <h3 class="footer__text__title">
+            Business Hours
+          </h3>
+          <ol class="footer__text">
+            <li>Monday - Friday: 10 AM - 7 PM</li>
+            <li>Saturday: 10 AM - 5 PM</li>
+            <li>Sunday: Closed</li>
+          </ol>
+        </div>
       </div>
     </div>
   </footer>
   <div id="copyright">
     <div class="container">
       <p class="copyright__text">
-        © copyright 2025 Halal Street| All rights reserved
+        © copyright 2025 Halal Street | All rights reserved
       </p>
     </div>
   </div>
@@ -227,8 +199,44 @@
 
   <!-- aos scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!-- custom scripts -->
   <script src="./main.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      speed: 600,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      }
+    });
+  </script>
 </body>
 
 </html>
